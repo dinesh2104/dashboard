@@ -1,3 +1,19 @@
+<?php
+
+if(isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm-password'])){
+	$username=$_POST['username'];
+	$email=$_POST['email'];
+	$password=$_POST['password'];
+	$confirmpassword=$_POST['confirm-password'];
+
+	if(User::registerUser($username,$email,$password,$confirmpassword)==true){
+		header("Location: /");
+		die();
+	}
+}
+
+?>
+
 <body class="app app-signup p-0">
 	<div class="row g-0 app-auth-wrapper">
 		<div class="col-12 col-md-7 col-lg-6 auth-main-col text-center p-5">
@@ -8,7 +24,7 @@
 					<h2 class="auth-heading text-center mb-4">Sign up to Portal</h2>
 
 					<div class="auth-form-container text-start mx-auto">
-						<form class="auth-form auth-signup-form">
+						<form class="auth-form auth-signup-form" method="POST" action="/signup.php">
 							<div class="email mb-3">
 								<label class="sr-only" for="signup-email">User Name</label>
 								<input id="signup-name" name="username" type="text" class="form-control signup-name"
@@ -26,7 +42,7 @@
 									required="required">
 							</div>
 							<div class="password mb-3">
-								<label class="sr-only" for="confirm-password">Password</label>
+								<label class="sr-only" for="confirm-password">Confirm Password</label>
 								<input id="confirm-password" name="confirm-password" type="password"
 									class="form-control signup-password" placeholder="Retype the password"
 									required="required">
@@ -42,7 +58,7 @@
 							</div><!--//extra-->
 
 							<div class="text-center">
-								<button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">Sign
+								<button type="submit" class="btn btn-primary w-100 theme-btn mx-auto">Sign
 									Up</button>
 							</div>
 						</form><!--//auth-form-->

@@ -1,7 +1,8 @@
 {
-	"db_server": "localhost:3306",
-	"db_username": "dinesh",
-	"db_password": "Dinesh@21042000",
-	"db_name": "dashboard",
-	"upload_path": "/home/dinesh/userimage/"
+	"db_server": "mysql.selfmade.ninja:3306",
+	"db_username": "dinesh2104",
+	"db_password": "dinesh123.",
+	"db_name": "dinesh2104_dashboard",
+	"upload_path": "/home/dinesh2104/htdocs/dashboard/workspace/images/",
+	"base_path":"/"
 }

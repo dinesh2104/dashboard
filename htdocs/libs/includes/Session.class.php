@@ -1,7 +1,7 @@
 <?php
 class Session{
     public static $user=null;
-    public static $userSession=null;
+    public static $usersession=null;
     public static $isError=null;
 
     public static function start(){
@@ -33,6 +33,16 @@ class Session{
         }
     }
 
+    public static function getUser()
+    {
+        return Session::$user;
+    }
+
+    public static function getUserSession()
+    {
+        return Session::$usersession;
+    }
+
     public static function loadTemplate($name){
         $path=$_SERVER['DOCUMENT_ROOT']."/templates/$name.php";
         // print_r($path);
@@ -51,6 +61,22 @@ class Session{
     public static function currentScript()
     {
         return basename($_SERVER['SCRIPT_NAME'], '.php');
+    }
+
+    public static function isAuthenticated(){
+        // print_r(Session::get("session_token"));
+        if(UserSession::Authorize(Session::get("session_token"))){
+            return true;
+        }
+        return false;
+    }
+
+    public static function ensureLogin(){
+        if(!Session::isAuthenticated()){    
+            Session::set('_redirect',$_SERVER['REQUEST_URI']);
+            header("location: /login.php");
+            die();
+        }
     }
 
 }
