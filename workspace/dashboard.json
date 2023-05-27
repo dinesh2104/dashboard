@@ -1,8 +1,0 @@
-{
-	"db_server": "mysql.selfmade.ninja:3306",
-	"db_username": "dinesh2104",
-	"db_password": "dinesh123.",
-	"db_name": "dinesh2104_dashboard",
-	"upload_path": "/home/dinesh2104/htdocs/dashboard/workspace/images/",
-	"base_path":"/"
-}

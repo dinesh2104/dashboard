@@ -1,7 +1,0 @@
-{
-	"db_server": "localhost:3306",
-	"db_username": "dinesh",
-	"db_password": "Dinesh@21042000",
-	"db_name": "dashboard",
-	"upload_path": "/home/dinesh/userimage/"
-}
