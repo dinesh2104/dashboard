@@ -14,13 +14,11 @@ include_once "./libs/load.php";
 // print_r($s->id);
 // print_r(UserSession::Authorize(Session::get('session_token')));
 
-$url = 'https://robohash.org/'.hash('md5','dinesh').'?gravatar=hashed';
+// print_r(Customer::getAllCustomer());
 
-// Image path
-print_r(__DIR__.'/../workspace/images/codexworld.png');
-$img = __DIR__.'/../workspace/images/'.hash('md5','dinesh').'.png';
-
-// Save image 
-file_put_contents($img, file_get_contents($url));
+$cust=new Customer(1);
+print_r($cust);
+print_r($cust->getFirstName());
+$cust->sample();
 
 ?>
